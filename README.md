@@ -11,7 +11,7 @@ Objetivos:    &nbsp;
 Comentarios:    &nbsp;
 *En este punto daremos seguimiento al proyecto con el mismo lenguaje que implementamos a    &nbsp;
 lo largo del semestre.    &nbsp;
-*Basandonos en c# logramos desarollar el backup de "CaribeBus" y una parte del "frontend"    
+*Basandonos en c# logramos desarollar el backup de "CaribeBus" y una parte del "frontend"   &nbsp;
     
 Universidad del Caribe Cancun    &nbsp;    
 SM. 78, Mza. 1, Lote 1, esquina Fraccionamiento Tabachines.     &nbsp;     
