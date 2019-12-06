@@ -21,7 +21,7 @@ namespace CARIBEBUS
         private void button1_Click(object sender, EventArgs e)
         {
             Datos.RegistarDato(textBox1.Text,textBox2.Text);
-            Application.DoEvents();
+            Datos.Consultar(dataGridView1);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -41,6 +41,7 @@ namespace CARIBEBUS
         private void button2_Click(object sender, EventArgs e)
         {
             Datos.EliminarDato(textBox1.Text,textBox2.Text);
+            Datos.Consultar(dataGridView1);
         }
     }
 }

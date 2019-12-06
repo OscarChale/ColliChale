@@ -34,17 +34,18 @@ namespace CARIBEBUS
         }
         public void EliminarResgistros(String Ruta, String Tiempo)
         {
-            BaseDatos conexion = new BaseDatos();
-            conexion.Conectar();
-            string query = "DELETE FROM informacionbus WHERE ruta=@rutas and estancia=@estancias";
-            using (MySqlCommand cmd = new MySqlCommand(query, conexion.conectarse))
+            this.RutaDisponible = Ruta;
+            this.TiempoEstancia = Tiempo;
+            BaseDatos con = new BaseDatos();
+            con.Conectar();
+            using (MySqlCommand cmd = new MySqlCommand(String.Format("DELETE FROM informacionbus WHERE ruta='{0}' AND estancia='{1}'", this.RutaDisponible, this.TiempoEstancia), con.conectarse))
             {
-                cmd.Parameters.AddWithValue("@rutas", MySqlDbType.VarChar).Value = Ruta;
-                cmd.Parameters.AddWithValue("@estancias", MySqlDbType.VarChar).Value = Tiempo;
+                cmd.Parameters.AddWithValue("?rutas", MySqlDbType.VarChar).Value = this.RutaDisponible;
+                cmd.Parameters.AddWithValue("?estancias", MySqlDbType.VarChar).Value = this.TiempoEstancia;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Datos eliminados corrextamente");
             }
-            conexion.conectarse.Close();
+            con.conectarse.Close();
         }
     }
 }

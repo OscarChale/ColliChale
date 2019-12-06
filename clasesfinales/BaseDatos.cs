@@ -21,7 +21,6 @@ namespace CARIBEBUS
             {
                 MessageBox.Show("Error no se pudo conectar a la base de datos" + ex);
             }
-
         }
         public void Desconectar()
         {
